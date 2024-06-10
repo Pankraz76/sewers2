@@ -16,9 +16,10 @@ rewrite {
 }
 classDiagrams {
   defaults {
+    include fields()
     exclude methods().withNameLike('*component*')
     exclude methods().withNameLike('*copy*')
-    exclude methods().withNameLike('*getEntries*')
+    exclude methods().withNameLike('*get*')
     exclude classes().withNameLike('*DefaultImpls*')
     exclude classes().withNameLike('*$1*')
     exclude classes().withNameLike('*Kt*')

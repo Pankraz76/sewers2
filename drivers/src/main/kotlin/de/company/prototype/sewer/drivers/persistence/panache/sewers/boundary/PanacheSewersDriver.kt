@@ -7,7 +7,8 @@ import java.util.*
 
 @ApplicationScoped
 class PanacheSewersDriver(
-  private val panacheRepository: PanacheRepository<Any>
+  private val panacheRepository: PanacheRepository<Any>,
+  private val SewersAdapter: SewersAdapter
 ) : SewersAdapter {
   override fun observe(id: UUID): Set<Any> {
     TODO("Not yet implemented")
