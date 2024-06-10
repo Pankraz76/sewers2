@@ -10,7 +10,7 @@ pluginManagement {
     id(quarkusPluginId) version quarkusPluginVersion
   }
 }
-rootProject.name = "woodpecker"
+rootProject.name = "sewers"
 include(":common:")
 include(":drivers:")
 include(":drivers:adapters:")
