@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.rain.boundary.control
+package de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.boundary.control
 
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.boundary.Sewers
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.boundary.control.entity.Sewer
@@ -7,7 +7,7 @@ import de.company.prototype.woodpecker.common.bce.boundary.control.Component
 import jakarta.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
-class RainShortageIndicationComponent(
+class PumpIndicationComponent(
   private val sewers: Sewers
 ) : Component<Map<String, Any>> {
 
@@ -18,7 +18,7 @@ class RainShortageIndicationComponent(
   }
 
   private fun check(rainPercentage: Int, sewer: Sewer) {
-    sewer.problems.plus(Problem("rain shortage", 100 - rainPercentage))
+    sewer.problems.plus(Problem("pump shortage", 100 - rainPercentage))
     return sewers.indicate(sewer)
   }
 }
