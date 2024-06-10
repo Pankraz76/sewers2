@@ -13,23 +13,23 @@ class SewerOverflowIndicationComponent(
   private val sewers: Sewers,
   private val rainShortageIndication: RainShortageIndicationComponent,
   private val pumpIndication: PumpIndicationComponent
-) : Component<Map<String, String>> {
+) : Component<Map<String, Any>> {
 
-  override fun execute(args: Map<String, String>) {
+  override fun execute(args: Map<String, Any>) {
     return execute(
-      sewers.observe(fromString(args["id"])).first(),
+      sewers.observe(fromString(args["id"].toString())).first(),
       args)
   }
 
   private fun execute(sewer: Sewer,
-                      args: Map<String, String>) {
-    execute(mapOf(
-      Pair("sewer", sewer),
+                      args: Map<String, Any>) {
+    checkIndications(mapOf(
+      Pair("sewer", sewer.toString()),
       Pair("indication", args["indication"].toString())))
     return sewers.indicate(sewer)
   }
 
-  private fun execute(args: Map<String, Any>) {
+  private fun checkIndications(args: Map<String, Any>) {
     rainShortageIndication.execute(args)
     pumpIndication.execute(args)
   }

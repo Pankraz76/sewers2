@@ -2,7 +2,6 @@ package de.company.prototype.sewer.drivers.adapters.use_cases.indicate.boundary
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.boundary.SewerOverflowIndicationService
-import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.boundary.control.entity.Sewer
 import de.company.prototype.woodpecker.common.bce.boundary.Service
 import jakarta.enterprise.context.ApplicationScoped
 
@@ -13,6 +12,6 @@ class SewerIndicationUseCase(
 ) : Service<String> {
 
   override fun serve(args: String) {
-    sewerOverflowIndication.serve(objectMapper.readValue(args, Sewer::class.java))
+    sewerOverflowIndication.serve(objectMapper.readValue(args, Map::class.java) as Map<String, String>)
   }
 }
