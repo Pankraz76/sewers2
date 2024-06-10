@@ -8,5 +8,5 @@ data class KeyPerformanceIndicator(
   @Nonnull
   val flow: String,
   @Nonnull
-  val rainfall: String
+  val rainfall: Number
 )

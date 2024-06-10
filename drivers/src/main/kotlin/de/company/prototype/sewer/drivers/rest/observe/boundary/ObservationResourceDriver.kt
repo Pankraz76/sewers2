@@ -16,8 +16,8 @@ class ObservationResourceDriver(
 ) : FunctionalService<String, String> {
 
   @GET
-  override fun serve(input: String): String {
-    return objectMapper.writeValueAsString(map(sewerObservation.serve(input)))
+  override fun serve(args: String): String {
+    return objectMapper.writeValueAsString(map(sewerObservation.serve(args)))
   }
 
   private fun map(serve: Set<Any>) =

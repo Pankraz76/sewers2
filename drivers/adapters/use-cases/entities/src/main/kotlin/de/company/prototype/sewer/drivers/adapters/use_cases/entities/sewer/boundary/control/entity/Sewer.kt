@@ -11,5 +11,5 @@ data class Sewer(
   @Nonnull
   val kpi: KeyPerformanceIndicator,
   @Nonnull
-  val problem: Problem
+  var problems: Set<Problem>
 )

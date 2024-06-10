@@ -12,7 +12,7 @@ class SewerIndicationUseCase(
   private val objectMapper: ObjectMapper
 ) : Service<String> {
 
-  override fun serve(input: String) {
-    sewerOverflowIndication.serve(objectMapper.readValue(input, Sewer::class.java))
+  override fun serve(args: String) {
+    sewerOverflowIndication.serve(objectMapper.readValue(args, Sewer::class.java))
   }
 }

@@ -11,7 +11,7 @@ class SewerObservationComponent(
   private val sewers: Sewers
 ) : FunctionalComponent<String, Set<Sewer>> {
 
-  override fun execute(input: String): Set<Sewer> {
-    return sewers.observe(fromString(input))
+  override fun execute(args: String): Set<Sewer> {
+    return sewers.observe(fromString(args))
   }
 }

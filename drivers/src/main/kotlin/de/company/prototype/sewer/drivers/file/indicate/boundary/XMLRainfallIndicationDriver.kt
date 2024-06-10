@@ -20,8 +20,8 @@ class XMLRainfallIndicationDriver(
   @PUT
   @Path("rainfall")
   @ResponseStatus(204)
-  override fun serve(input: String) {
-    sewerIndication.serve(input)
+  override fun serve(args: String) {
+    sewerIndication.serve(args)
   }
 
 }

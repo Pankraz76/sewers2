@@ -8,8 +8,8 @@ import jakarta.enterprise.context.ApplicationScoped
 class SewerIndicationAdapter(
   private val sewerIndication: SewerIndicationUseCase
 ) : Service<String> {
-  override fun serve(input: String) {
-    sewerIndication.serve(input)
+  override fun serve(args: String) {
+    sewerIndication.serve(args)
   }
 
 }

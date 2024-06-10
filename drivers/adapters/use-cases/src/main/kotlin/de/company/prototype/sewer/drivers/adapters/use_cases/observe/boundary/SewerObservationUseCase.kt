@@ -10,7 +10,7 @@ class SewerObservationUseCase(
   private val sewerObservation: SewerObservationService
 ) : FunctionalService<String, Set<Sewer>> {
 
-  override fun serve(input: String): Set<Sewer> {
-    return sewerObservation.serve(input)
+  override fun serve(args: String): Set<Sewer> {
+    return sewerObservation.serve(args)
   }
 }
