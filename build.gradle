@@ -1,0 +1,120 @@
+plugins {
+  id 'org.jetbrains.kotlin.jvm' version '2.0.0'
+  id 'org.jetbrains.kotlin.plugin.allopen' version '2.0.0'
+  id 'org.jlleitschuh.gradle.ktlint' version '12.1.1'
+  id 'io.gitlab.plunts.plantuml' version '2.1.7'
+  id 'org.openrewrite.rewrite' version '6.16.0'
+}
+group = 'de.company.prototype.sewer'
+version = '1.0.0-SNAPSHOT'
+repositories {
+  mavenCentral()
+  mavenLocal()
+}
+rewrite {
+  activeRecipe("org.openrewrite.kotlin.StaticAnalysis")
+}
+classDiagrams {
+  defaults {
+    exclude methods().withNameLike('*component*')
+    exclude methods().withNameLike('*copy*')
+    exclude methods().withNameLike('*getEntries*')
+    exclude classes().withNameLike('*DefaultImpls*')
+    exclude classes().withNameLike('*$1*')
+    exclude classes().withNameLike('*Kt*')
+//    note("Frameworks and tools such as the Database, the Web Framework, etc.").leftOf(packages().withNameLike('*drivers'))
+//    note("Convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web.").leftOf(packages().withNameLike('*adapters'))
+//    note("Application specific business rules. It encapsulates and implements all of the use cases of the system.").leftOf(packages().withNameLike('*use_cases'))
+//    note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").leftOf(packages().withNameLike('*entities'))
+    style {
+      skinparam 'linetype', 'ortho'
+      show 'stereotype'
+      addStyle("#skyblue").to(packages().withNameLike('*drivers'))
+      addStyle("#82ffb4").to(packages().withNameLike('*adapters'))
+      addStyle("#ff9a99").to(packages().withNameLike('*use_cases'))
+      addStyle("#fcfdb0").to(packages().withNameLike('*entities'))
+      addStyle("#lime").to(packages().withNameLike('*boundary'))
+      addStyle("#orange").to(packages().withNameLike('*control'))
+      addStyle("#fcfdb0").to(packages().withNameLike('*entity'))
+      addStyle("#gold").to(packages().withNameLike('*dto'))
+      addStyle("#goldenrod").to(packages().withNameLike('*bridge'))
+      addStyle("#aqua").to(packages().withNameLike('*mapper'))
+      addStyle("#white").to(packages().withNameLike('*rest'))
+      addStyle("#F0A238").to(packages().withNameLike('*aws'))
+      addStyle("#white").to(packages().withNameLike('*persistence'))
+      addStyle("#4695EB").to(packages().withNameLike('*panache'))
+      addStyle("#4695EB").to(packages().withNameLike('*quarkus'))
+    }
+  }
+  diagram {
+    name 'sewer'
+    include packages().withName('de.company.prototype.sewer')
+    include classes().withName('io.quarkus.hibernate.orm.panache.PanacheRepository').outsideOfProject()
+    writeTo file('doc/uml/puml/sewer.puml')
+    renderTo file('doc/uml/svg/sewer.svg')
+  }
+  diagram {
+    name 'drivers'
+    include packages().withName('de.company.prototype.sewer.drivers')
+    include classes().withName('io.quarkus.hibernate.orm.panache.PanacheRepository').outsideOfProject()
+    writeTo file('doc/uml/puml/drivers.puml')
+    renderTo file('doc/uml/svg/drivers.svg')
+  }
+  diagram {
+    name 'adapters'
+    include packages().withName('de.company.prototype.sewer.drivers.adapters')
+    writeTo file('doc/uml/puml/adapters.puml')
+    renderTo file('doc/uml/svg/adapters.svg')
+  }
+  diagram {
+    name 'use_cases'
+    include packages().withName('de.company.prototype.sewer.drivers.adapters.use_cases')
+    writeTo file('doc/uml/puml/legend.puml')
+    renderTo file('doc/uml/svg/use_cases.svg')
+  }
+  diagram {
+    name 'entities'
+    include packages().withName('de.company.prototype.sewer.drivers.adapters.use_cases.entities')
+    writeTo file('doc/uml/puml/entities.puml')
+    renderTo file('doc/uml/svg/entities.svg')
+  }
+}
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'kotlin'
+  repositories {
+    mavenCentral()
+    mavenLocal()
+  }
+  dependencies {
+    implementation 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0-M1'
+    implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'org.mapstruct:mapstruct-processor:1.6.0.Beta1'
+    implementation 'org.mapstruct:mapstruct:1.6.0.Beta1'
+    testImplementation 'org.assertj:assertj-core:3.25.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
+  }
+  java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+  }
+  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlinOptions.javaParameters = true
+  }
+}
+tasks.withType(Test) {
+  systemProperty('java.util.logging.manager', 'org.jboss.logmanager.LogManager')
+}
+allOpen {
+  annotation('jakarta.ws.rs.Path')
+  annotation('jakarta.enterprise.context.ApplicationScoped')
+  annotation('jakarta.persistence.Entity')
+  annotation('io.quarkus.test.junit.QuarkusTest')
+}
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+  kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
+  kotlinOptions.javaParameters = true
+}

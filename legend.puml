@@ -1,0 +1,6 @@
+@startuml
+legend top left
+| b(Term)                   | b(Explanation) |
+| e2e                       | End-to-End (Black Box) Testing, we do not test any units, unless we have to |
+endlegend
+@enduml
