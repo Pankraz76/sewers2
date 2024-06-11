@@ -25,11 +25,11 @@ classDiagrams {
     note("Convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web.").rightOf(packages().withNameLike('*adapters'))
     note("Application specific business rules. It encapsulates and implements all of the use cases of the system.").rightOf(packages().withNameLike('*use_cases'))
     note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").rightOf(packages().withNameLike('*entities'))
-    note("Persistence layer, responsible for storing and retrieving data. It can use various implementations such as relational databases, AWS services, or simple file storage.").rightOf(packages().withNameLike('*persistence'))
+    note("Persistence layer responsible for storing and retrieving data, using various implementations such as relational databases, AWS services, or file storage.").rightOf(packages().withNameLike('*persistence'))
     note("Panache is the Quarkus counterpart to Spring Data, simplifying the data access layer by leveraging Hibernate ORM.").rightOf(classes().withNameLike('*PanacheRepository'))
-    note("Invokes other components to build final indication composition.").rightOf(classes().withNameLike('*SewerOverflowIndicationComponent'))
-    note("Representing the abstract functionality only, implementation (detail) is somewhere else.").rightOf(classes().withNameLike('*Sewers'))
-    note("Quarkus, the counterpart to Spring, is a Kubernetes-native Java framework designed for GraalVM and OpenJDK HotSpot. It optimizes Java specifically for containerized environments.").rightOf(packages().withNameLike('*quarkus'))
+    note("Invokes other components to build the final indication composition.").rightOf(classes().withNameLike('*SewerOverflowIndicationComponent'))
+    note("Represents the abstract functionality only; implementation details are elsewhere.").rightOf(classes().withNameLike('*Sewers'))
+    note("Quarkus, the counterpart to Spring, is a Kubernetes-native Java framework designed for GraalVM and OpenJDK HotSpot, optimizing Java for containerized environments.").rightOf(packages().withNameLike('*quarkus'))
     note("Quarkus Funqy streamlines serverless Java function deployment across AWS Lambda, Google Cloud Functions, Microsoft Azure, and IBM Cloud.").rightOf(packages().withNameLike('*funqy'))
     style {
       skinparam 'linetype', 'ortho'
