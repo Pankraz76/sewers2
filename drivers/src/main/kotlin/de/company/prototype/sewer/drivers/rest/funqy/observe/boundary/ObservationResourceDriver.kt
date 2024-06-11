@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.rest.observe.boundary
+package de.company.prototype.sewer.drivers.rest.funqy.observe.boundary
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import de.company.prototype.sewer.drivers.adapters.observe.boundary.SewerObservationAdapter
