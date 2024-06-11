@@ -26,7 +26,8 @@ classDiagrams {
     note("Application specific business rules. It encapsulates and implements all of the use cases of the system.").rightOf(packages().withNameLike('*use_cases'))
     note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").rightOf(packages().withNameLike('*entities'))
     note("Persistence layer, responsible for storing and retrieving data. It can use various implementations such as relational databases, AWS services, or simple file storage.").rightOf(packages().withNameLike('*persistence'))
-    note("Panache is an alternative to Spring Data, simplifying the data access layer in Java applications by leveraging the Hibernate ORM. More info: https://quarkus.io/guides/hibernate-orm-panache").rightOf(packages().withNameLike('*panache'))
+    note("Panache is the quarkus counterpart to Spring Data, simplifying the data access layer by leveraging Hibernate ORM.").rightOf(packages().withNameLike('*panache'))
+    note("Panache is the quarkus counterpart to Spring Data, simplifying the data access layer by leveraging Hibernate ORM.").rightOf(packages().withNameLike('*quarkus'))
     style {
       skinparam 'linetype', 'ortho'
       show 'stereotype'
