@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.persistence.panache.sewers.boundary
+package de.company.prototype.sewer.drivers.persistence.panache.sewers.boundary.control
 
 import de.company.prototype.sewer.drivers.adapters.sewers.boundary.SewersAdapter
 import de.company.prototype.sewer.drivers.persistence.panache.sewers.boundary.control.entity.PanacheSewerEntity
