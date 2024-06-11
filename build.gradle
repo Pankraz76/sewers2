@@ -41,7 +41,7 @@ classDiagrams {
       addStyle("#white").to(packages().withNameLike('*rest'))
       addStyle("#F0A238").to(packages().withNameLike('*aws'))
       addStyle("#white").to(packages().withNameLike('*persistence'))
-      addStyle("#4695EB").to(packages().withNameLike('*panache'))
+      addStyle("#4695EB").to(packages().withNameLike('*panache*'))
       addStyle("#4695EB").to(packages().withNameLike('*quarkus*'))
     }
   }
