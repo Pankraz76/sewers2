@@ -21,10 +21,10 @@ classDiagrams {
     exclude classes().withNameLike('*DefaultImpls*')
     exclude classes().withNameLike('*$1*')
     exclude classes().withNameLike('*Kt*')
-    note("Frameworks and tools such as the Database, the Web Framework, etc.").leftOf(packages().withNameLike('*drivers'))
-    note("Convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web.").leftOf(packages().withNameLike('*adapters'))
-    note("Application specific business rules. It encapsulates and implements all of the use cases of the system.").leftOf(packages().withNameLike('*use_cases'))
-    note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").leftOf(packages().withNameLike('*entities'))
+    note("Frameworks and tools such as the Database, the Web Framework, etc.").rightOf(packages().withNameLike('*drivers'))
+    note("Convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web.").rightOf(packages().withNameLike('*adapters'))
+    note("Application specific business rules. It encapsulates and implements all of the use cases of the system.").rightOf(packages().withNameLike('*use_cases'))
+    note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").rightOf(packages().withNameLike('*entities'))
     style {
       skinparam 'linetype', 'ortho'
       show 'stereotype'

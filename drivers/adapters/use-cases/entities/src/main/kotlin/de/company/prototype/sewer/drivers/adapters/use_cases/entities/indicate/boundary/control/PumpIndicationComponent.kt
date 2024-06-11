@@ -6,9 +6,9 @@ import de.company.prototype.woodpecker.common.bce.boundary.control.Component
 import jakarta.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
-class PumpIndicationComponent : Component<Map<String, Any>> {
+class PumpIndicationComponent : Component<Map<String, String>> {
 
-  override fun execute(args: Map<String, Any>) {
+  override fun execute(args: Map<String, String>) {
     return check(
       args["indication.rain"] as Int,
       args["sewer"] as Sewer)
