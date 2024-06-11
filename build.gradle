@@ -16,10 +16,8 @@ rewrite {
 }
 classDiagrams {
   defaults {
-    include fields().thatArePublic()
     exclude methods().withNameLike('*component*')
     exclude methods().withNameLike('*copy*')
-    exclude methods().withNameLike('*get*')
     exclude classes().withNameLike('*DefaultImpls*')
     exclude classes().withNameLike('*$1*')
     exclude classes().withNameLike('*Kt*')
@@ -44,20 +42,23 @@ classDiagrams {
       addStyle("#F0A238").to(packages().withNameLike('*aws'))
       addStyle("#white").to(packages().withNameLike('*persistence'))
       addStyle("#4695EB").to(packages().withNameLike('*panache'))
-      addStyle("#4695EB").to(packages().withNameLike('*quarkus'))
+      addStyle("#4695EB").to(packages().withNameLike('*quarkus*'))
     }
   }
   diagram {
     name 'sewer'
     include packages().withName('de.company.prototype.sewer')
-    include classes().withName('io.quarkus.hibernate.orm.panache.PanacheRepository').outsideOfProject()
+    include classes().withName('io.quarkus.hibernate.orm.panache.kotlin.PanacheRepository').outsideOfProject()
+    include classes().withName('io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity').outsideOfProject()
     writeTo file('doc/uml/puml/sewer.puml')
     renderTo file('doc/uml/svg/sewer.svg')
   }
   diagram {
     name 'drivers'
     include packages().withName('de.company.prototype.sewer.drivers')
-    include classes().withName('io.quarkus.hibernate.orm.panache.PanacheRepository').outsideOfProject()
+    include classes().withName('io.quarkus.hibernate.orm.panache.kotlin.PanacheRepository').outsideOfProject()
+    include classes().withName('io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity').outsideOfProject()
+
     writeTo file('doc/uml/puml/drivers.puml')
     renderTo file('doc/uml/svg/drivers.svg')
   }

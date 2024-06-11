@@ -14,25 +14,22 @@
 | ID | Solution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1  | [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| 1  | ![drivers.svg](doc/uml/svg/drivers.svg)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 2  | See Refinement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 1  | ![drivers.svg](doc/uml/svg/sewer.svg)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 2  | [Refinement](#refinement)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | 3  | [What is Amazon Cognito?](https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/what-is-amazon-cognito.html) (provides HTTPS out of the box) <br> To enhance security, it's recommended not to process raw data directly. Instead, consider manual encryption using techniques like hashing or salting. [encryption-hashing-salting](https://www.thesslstore.com/blog/difference-encryption-hashing-salting/)                                                                                                                                                                                   |
 | 4  | Visualization Framework: [Chart.js](https://www.chartjs.org/) (best practice) <br> **Why Chart.js is Useful for the given task** <br> - **Ease of Use:** Simple API for quick implementation. <br> - **Wide Range of Chart Types:** Supports complex, multi-axis visualizations. <br> - **Customization:** Highly customizable to meet specific needs. <br> - **Performance:** Efficient handling of large data sets with smooth rendering. <br> - **Community Support:** Extensive resources and regular updates. <br> - **Personal Experience:** Proven reliability and effectiveness in past projects. |
 
-## Refinement (user story 2)
+## Refinement
 
 ### Task: calculate which sewers are likely to overflow before the event happens:
 
 ###### Developer Tasks
 
-| ID | Task Description                    |
-|----|-------------------------------------|
-| 1  | BDD acceptance-test -> rest-assured |
-| 2  | test indication                     |
-| 2a | rain                                |
-| 2b | flow                                |
-| 2c | pump                                |
-| 3  | test observation                    |
-| 3a | rain                                |
-| 3b | flow                                |
-| 3c | pump                                |
+| ID | Task Description                                                |
+|----|-----------------------------------------------------------------|
+| 1  | BDD acceptance-test -> [rest-assured](https://rest-assured.io/) |
+| 2  | **test indication & observation**                               |
+| 2a | rain                                                            |
+| 2b | flow                                                            |
+| 2c | pump                                                            |
+| 2d | in combination of several indications                           |
