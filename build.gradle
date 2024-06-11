@@ -27,8 +27,9 @@ classDiagrams {
     note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").rightOf(packages().withNameLike('*entities'))
     note("Persistence layer, responsible for storing and retrieving data. It can use various implementations such as relational databases, AWS services, or simple file storage.").rightOf(packages().withNameLike('*persistence'))
     note("Panache is the Quarkus counterpart to Spring Data, simplifying the data access layer by leveraging Hibernate ORM.").rightOf(classes().withNameLike('*PanacheRepository'))
-    note("SewerOverflowIndicationComponent").rightOf(classes().withNameLike('*SewerOverflowIndicationComponent'))
-    note("Quarkus, the counterpart to Spring, is a Kubernetes-native Java framework designed for GraalVM and OpenJDK HotSpot. It optimizes Java specifically for containerized environments.").topOf(packages().withNameLike('*quarkus'))
+    note("Invokes other components to build final indication composition.").rightOf(classes().withNameLike('*SewerOverflowIndicationComponent'))
+    note("Representing the abstract functionality only, implementation (detail) is somewhere else.").rightOf(classes().withNameLike('*Sewers'))
+    note("Quarkus, the counterpart to Spring, is a Kubernetes-native Java framework designed for GraalVM and OpenJDK HotSpot. It optimizes Java specifically for containerized environments.").rightOf(packages().withNameLike('*quarkus'))
     note("Quarkus Funqy streamlines serverless Java function deployment across AWS Lambda, Google Cloud Functions, Microsoft Azure, and IBM Cloud.").rightOf(packages().withNameLike('*funqy'))
     style {
       skinparam 'linetype', 'ortho'
