@@ -16,7 +16,7 @@ rewrite {
 }
 classDiagrams {
   defaults {
-    include fields()
+    include fields().thatArePublic()
     exclude methods().withNameLike('*component*')
     exclude methods().withNameLike('*copy*')
     exclude methods().withNameLike('*get*')
