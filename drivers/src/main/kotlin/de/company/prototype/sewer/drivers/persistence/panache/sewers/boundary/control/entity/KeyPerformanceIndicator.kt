@@ -5,9 +5,11 @@ import jakarta.annotation.Nonnull
 import jakarta.persistence.Entity
 
 @Entity
-data class PanacheSewerEntity(
+data class KeyPerformanceIndicator(
   @Nonnull
-  val kpi: KeyPerformanceIndicator,
+  val pumpPowerConsumption: String,
   @Nonnull
-  var problems: Set<Problem>
+  val flow: String,
+  @Nonnull
+  val rainfall: Number
 ) : PanacheEntity()
