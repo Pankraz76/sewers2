@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.persistence.panache.sewers.boundary.control.entity
+package de.company.prototype.sewer.drivers.persistence.panache.sewers.problem.boundary.control.entity
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
 import jakarta.annotation.Nonnull
