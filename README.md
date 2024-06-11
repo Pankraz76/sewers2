@@ -22,8 +22,9 @@
 
 | ID | Solution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | 1  | ![drivers.svg](doc/uml/svg/drivers.svg)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 2  | Developer Tasks: <br> - Get overflow-forecast via REST-API <br> - Add new value to the chart visualization framework [Chart.js Multi-Axis Example](https://www.chartjs.org/docs/latest/samples/line/multi-axis.html) <br> - Add ac-test rest-assured <br> - Add e2e-test for UI                                                                                                                                                                                                                                                                                                                           |
+| 2  | See Developer Tasks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | 3  | [What is Amazon Cognito?](https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/what-is-amazon-cognito.html) (provides HTTPS out of the box) <br> To enhance security, it's recommended not to process raw data directly. Instead, consider manual encryption using techniques like hashing or salting. [encryption-hashing-salting](https://www.thesslstore.com/blog/difference-encryption-hashing-salting/)                                                                                                                                                                                   |
 | 4  | Visualization Framework: [Chart.js](https://www.chartjs.org/) (best practice) <br> **Why Chart.js is Useful for the given task** <br> - **Ease of Use:** Simple API for quick implementation. <br> - **Wide Range of Chart Types:** Supports complex, multi-axis visualizations. <br> - **Customization:** Highly customizable to meet specific needs. <br> - **Performance:** Efficient handling of large data sets with smooth rendering. <br> - **Community Support:** Extensive resources and regular updates. <br> - **Personal Experience:** Proven reliability and effectiveness in past projects. |
 
@@ -31,14 +32,17 @@
 
 ### Developer Tasks
 
-| ID | Task Description                                                                                                                                   |
-|----|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | Get overflow-forecast via REST-API                                                                                                                 |
-| 2  | Add new value to the chart visualization framework [Chart.js Multi-Axis Example](https://www.chartjs.org/docs/latest/samples/line/multi-axis.html) | |
-| 3  | Add ac-test rest-assured                                                                                                                           |
-| 3a | test indication                                                                                                                                    |
-| 3b | test observation                                                                                                                                   |
-| 3c | test polling                                                                                                                                       |
-| 4  | Add e2e-test for UI                                                                                                                                |
-| 4a | test observation                                                                                                                                   |
-| 4b | test polling                                                                                                                                       |
+Task: As an operator, I want to calculate which sewers are likely to overflow before the event
+happens.
+
+| ID | Task Description                    |
+|----|-------------------------------------|
+| 1  | BDD acceptance-test -> rest-assured |
+| 2  | test indication                     |
+| 2a | rain                                |
+| 2b | flow                                |
+| 2c | pump                                |
+| 3  | test observation                    |
+| 3a | rain                                |
+| 3b | flow                                |
+| 3c | pump                                |
