@@ -1,3 +1,0 @@
-@startuml
-PanacheSewersDriver --> PanacheRepository
-@enduml

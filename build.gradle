@@ -25,6 +25,8 @@ classDiagrams {
     note("Convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web.").rightOf(packages().withNameLike('*adapters'))
     note("Application specific business rules. It encapsulates and implements all of the use cases of the system.").rightOf(packages().withNameLike('*use_cases'))
     note("Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.").rightOf(packages().withNameLike('*entities'))
+    note("Persistence layer, responsible for storing and retrieving data. It can use various implementations such as relational databases, AWS services, or simple file storage.").rightOf(packages().withNameLike('*persistence'))
+    note("Panache is an alternative to Spring Data, simplifying the data access layer in Java applications by leveraging the Hibernate ORM. More info: https://quarkus.io/guides/hibernate-orm-panache").rightOf(packages().withNameLike('*panache'))
     style {
       skinparam 'linetype', 'ortho'
       show 'stereotype'
@@ -71,7 +73,7 @@ classDiagrams {
   diagram {
     name 'use_cases'
     include packages().withName('de.company.prototype.sewer.drivers.adapters.use_cases')
-    writeTo file('doc/uml/puml/legend.puml')
+    writeTo file('doc/uml/puml/use_cases.puml')
     renderTo file('doc/uml/svg/use_cases.svg')
   }
   diagram {
