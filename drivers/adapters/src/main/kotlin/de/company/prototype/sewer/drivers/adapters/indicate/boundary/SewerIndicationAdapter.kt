@@ -6,10 +6,10 @@ import jakarta.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
 class SewerIndicationAdapter(
-  private val sewerIndication: SewerIndicationUseCase
+  private val sewerIndication: SewerIndicationUseCase,
 ) : Service<String> {
   override fun serve(args: String) {
-    sewerIndication.serve(args)
+    sewerIndication.serve(args as Map<String, String>)
   }
 
 }
