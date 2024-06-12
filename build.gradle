@@ -31,6 +31,7 @@ classDiagrams {
     note("Represents the abstract functionality only; implementation details are elsewhere.").rightOf(classes().withNameLike('*Sewers'))
     note("Quarkus, the counterpart to Spring, is a Kubernetes-native Java framework designed for GraalVM and OpenJDK HotSpot, optimizing Java for containerized environments.").rightOf(packages().withNameLike('*quarkus'))
     note("Quarkus Funqy streamlines serverless Java function deployment across AWS Lambda, Google Cloud Functions, Microsoft Azure, and IBM Cloud.").rightOf(packages().withNameLike('*funqy'))
+    note("Offers push notifications to clients (subscription similar to WhatsApp) and a simple polling mechanism.").bottomOf(classes().withNameLike('*ObservationResourceDriver'))
     style {
       skinparam 'linetype', 'ortho'
       show 'stereotype'
