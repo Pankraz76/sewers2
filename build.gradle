@@ -30,7 +30,7 @@ classDiagrams {
     note("Invokes other components to build the final indication composition.").bottomOf(classes().withNameLike('*SewerOverflowIndicationComponent'))
     note("Represents the abstract functionality only; implementation details are elsewhere.").bottomOf(classes().withNameLike('*Sewers'))
     note("Quarkus, the counterpart to Spring, is a Kubernetes-native Java framework designed for GraalVM and OpenJDK HotSpot, optimizing Java for containerized environments.").bottomOf(packages().withNameLike('*quarkus'))
-    note("Quarkus Funqy streamlines serverless Java function deployment across AWS Lambda, Google Cloud Functions, Microsoft Azure, and IBM Cloud.").bottomOf(packages().withNameLike('*funqy'))
+    note("Quarkus Funqy streamlines serverless Java function deployment across AWS Lambda, Google Cloud Functions, Microsoft Azure, and IBM Cloud.").bottomOf(packages().withName('de.company.prototype.sewer.drivers.observe.web.rest.funqy'))
     note("Offers push notifications to clients (subscription similar to WhatsApp) and a simple polling mechanism.").bottomOf(classes().withNameLike('*ObservationResourceDriver'))
     note("Showcase: This section illustrates that different implementations can be used depending on specific occasions. Normally, we would skip this part and directly use a final implementation instead.").bottomOf(classes().withNameLike('*SewersDriverOrchestrator'))
     style {
