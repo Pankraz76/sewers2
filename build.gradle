@@ -54,8 +54,6 @@ classDiagrams {
       addStyle("#grey").to(packages().withNameLike('*file'))
       addStyle("#4695EB").to(packages().withNameLike('*panache*'))
       addStyle("#4695EB").to(packages().withNameLike('*funqy*'))
-//      addStyle("#4695EB").to(packages().withNameLike('*de.company.prototype.sewer.drivers.observe.web.rest.funqy*'))
-//      addStyle("#4695EB").to(packages().withName('de.company.prototype.sewer.drivers.observe.web.rest.funqy'))
       addStyle("#4695EB").to(packages().withNameLike('*quarkus*'))
     }
   }
