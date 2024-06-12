@@ -52,7 +52,7 @@ classDiagrams {
       addStyle("#white").to(packages().withNameLike('*observe'))
       addStyle("#white").to(packages().withNameLike('*sewer'))
       addStyle("#white").to(packages().withNameLike('*indicate'))
-      addStyle("#grey").to(packages().withNameLike('*file'))
+      addStyle("#lightgrey").to(packages().withNameLike('*file'))
       addStyle("#4695EB").to(packages().withNameLike('*panache*'))
       addStyle("#4695EB").to(packages().withNameLike('*funqy*'))
       addStyle("#4695EB").to(packages().withNameLike('*quarkus*'))
