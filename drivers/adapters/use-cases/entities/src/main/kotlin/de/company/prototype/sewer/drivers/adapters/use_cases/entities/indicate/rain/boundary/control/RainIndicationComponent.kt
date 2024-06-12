@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.boundary.control
+package de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.rain.boundary.control
 
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.boundary.control.entity.Sewer
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.problem.boundary.control.entity.Problem

@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.indicate.web.rest.funqy.boundary
+package de.company.prototype.sewer.drivers.indicate.web.rest.funqy.flow.boundary
 
 import de.company.prototype.sewer.drivers.adapters.indicate.boundary.SewerIndicationAdapter
 import de.company.prototype.woodpecker.common.bce.boundary.Service

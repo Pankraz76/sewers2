@@ -1,5 +1,8 @@
 package de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.boundary.control
 
+import de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.flow.boundary.control.FlowIndicationComponent
+import de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.pump.boundary.control.PumpIndicationComponent
+import de.company.prototype.sewer.drivers.adapters.use_cases.entities.indicate.rain.boundary.control.RainIndicationComponent
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.boundary.Sewers
 import de.company.prototype.sewer.drivers.adapters.use_cases.entities.sewer.boundary.control.entity.Sewer
 import de.company.prototype.woodpecker.common.bce.boundary.control.Component

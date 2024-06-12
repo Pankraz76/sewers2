@@ -1,4 +1,4 @@
-package de.company.prototype.sewer.drivers.indicate.web.rest.funqy.boundary
+package de.company.prototype.sewer.drivers.indicate.web.rest.funqy.pump.boundary
 
 import de.company.prototype.sewer.drivers.adapters.indicate.boundary.SewerIndicationAdapter
 import de.company.prototype.woodpecker.common.bce.boundary.Service
@@ -13,12 +13,12 @@ import org.jboss.resteasy.reactive.ResponseStatus
 @ApplicationScoped
 @Produces(APPLICATION_JSON)
 @Consumes(APPLICATION_JSON)
-class RainfallIndicationResourceDriver(
+class PumpPowerConsumptionIndicationResourceDriver(
   private val sewerIndication: SewerIndicationAdapter,
 ) : Service<String> {
 
   @PUT
-  @Path("rainfall")
+  @Path("pumpPowerConsumption")
   @ResponseStatus(204)
   override fun serve(args: String) {
     sewerIndication.serve(args)
